@@ -1,0 +1,1 @@
+export type FamilyStatus = "ACCEPTED" | "REJECTED" | "PENDING"

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: mad-app
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/family_tree
+      SPRING_DATASOURCE_USERNAME: dbuser
+      SPRING_DATASOURCE_PASSWORD: dbpass
+    ports:
+      - "8084:8080"
+    networks:
+      - mad-network
+
+  mysql:
+    image: mysql:8.2
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: family_tree
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbpass
+    ports:
+      - "3306:3306"
+    networks:
+      - mad-network
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+networks:
+  mad-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local
