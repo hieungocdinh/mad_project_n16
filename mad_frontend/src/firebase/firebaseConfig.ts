@@ -4,12 +4,12 @@ import { getAuth } from 'firebase/auth'; // nếu dùng Auth
 import { getStorage } from 'firebase/storage'; // nếu dùng Storage
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDtDQ_9Q5MN5PBV5CTpeUzhI8_hnY3zqsg",
-    authDomain: "superb-avatar-451502-j8.firebaseapp.com",
-    projectId: "superb-avatar-451502-j8",
-    storageBucket: "superb-avatar-451502-j8.appspot.com",
-    messagingSenderId: "1062344207995",
-    appId: "1:1062344207995:android:c7974b0a8f4ee9f8307cde",
+    apiKey: "YOUR_API_KEY", // Khóa API dùng để xác thực các request từ ứng dụng tới Firebase
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com", // Tên miền xác thực cho Firebase Authentication
+    projectId: "YOUR_PROJECT_ID", // ID của project Firebase
+    storageBucket: "YOUR_PROJECT_ID.appspot.com", // Tên bucket dùng cho Firebase Storage
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID", // ID dùng cho dịch vụ Firebase Cloud Messaging
+    appId: "YOUR_APP_ID", // ID ứng dụng, thường dùng để xác định ứng dụng trên nền tảng (Android/iOS/web)
 };
 
 const app = initializeApp(firebaseConfig);
